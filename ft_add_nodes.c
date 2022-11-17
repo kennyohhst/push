@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_add_nodes.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: code <code@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: kkalika <kkalika@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 16:21:16 by code              #+#    #+#             */
-/*   Updated: 2022/11/15 19:26:48 by code             ###   ########.fr       */
+/*   Updated: 2022/11/17 15:58:43 by kkalika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,28 +15,29 @@
 void	ft_add_nodes(int num, t_stack **list)
 {
 	t_stack	*temp;
+	t_stack	*new;
 	
-	temp = malloc(sizeof(t_stack));
-	if (!temp)
+	new = malloc(sizeof(t_stack));
+	if (!new)
 		exit(write(1, "Error", 5));
-	temp->num = num;
-	if ((*list))
+	new->num = num;
+	temp = (*list);
+	if (temp)
 	{
-		while (!(*list)->tail)
-			(*list) = (*list)->next;
-		(*list)->next = temp;
-		temp->prev = (*list);
 		(*list)->tail = 0;
-		temp->tail = 1;
-		temp->head = (*list)->head;
-		(*list) = (*list)->head;
+		temp = temp->prev;
+		temp->tail = 0;
+		temp->next = new;
+		(*list)->prev = new;
+		new->prev = temp;
+		new->next = (*list);
+		new->tail = 1;
 	}
 	else
 	{
-		temp->head = temp;
-		temp->tail = 1;
-		(*list) = temp;
+		new->next = new;
+		new->prev = new;
+		new->tail = 1;
+		(*list) = new;
 	}
-	temp->next = temp->head;
-	temp->head->prev = temp;
 }

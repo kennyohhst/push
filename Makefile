@@ -1,5 +1,5 @@
 NAME = push_swap.a
-FLAGS = -g -Wall -Werror -Wextra #-fsanitize=address
+FLAGS = -g -Wall -Werror -Wextra -fsanitize=address
 SRC = ft_numcheck.c ft_grab_num.c ft_free.c ft_parsing.c ft_add_nodes.c ft_atoi.c ft_atoi_l.c \
 		ft_check_double.c ft_check_sort.c ft_small_sort.c ft_swap_a.c ft_rotate_a.c \
 		ft_reverse_rotate_a.c ft_medium_sort.c ft_length_list.c ft_circular_doubly.c \

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: code <code@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: kkalika <kkalika@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 15:22:55 by code              #+#    #+#             */
-/*   Updated: 2022/11/13 18:19:43 by code             ###   ########.fr       */
+/*   Updated: 2022/11/17 14:42:38 by kkalika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ typedef struct linked_list
 //	FUNCTIONS NEEDED FOR PUSH_SWAP
 
 int			ft_grab_num(char *str);
-int			ft_numcheck(char *str);
+void		ft_numcheck(char *str);
 char		*ft_free(char *str);
 t_stack		*ft_parsing(t_stack *list, char **argv);
 t_stack		*ft_circular_doubly(t_stack *list);

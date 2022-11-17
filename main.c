@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: code <code@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: kkalika <kkalika@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 15:37:45 by code              #+#    #+#             */
-/*   Updated: 2022/11/15 19:40:47 by code             ###   ########.fr       */
+/*   Updated: 2022/11/17 15:52:23 by kkalika          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,13 +43,13 @@ int	main(int argc, char **argv)
 		
 
 	// LETS TEST THIS BITCH
-	stack_a = stack_a->head;
 	while (stack_a->tail != 1)
 	{
-		printf("%d  ", stack_a->num);
+		printf("help: %d  ", stack_a->num);
 		stack_a = stack_a->next;
 	}
-	printf("%d\n", stack_a->num);
+	printf("me : %d\n", stack_a->num);
+	printf("tail : %d\n", stack_a->tail);
 	if (stack_a != NULL)
 		ft_free_list(stack_a->head);
 	if (stack_b != NULL)
