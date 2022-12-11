@@ -6,29 +6,34 @@
 /*   By: code <code@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 17:09:01 by code              #+#    #+#             */
-/*   Updated: 2022/11/11 16:01:59 by code             ###   ########.fr       */
+/*   Updated: 2022/12/09 16:31:03 by code             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack	*ft_small_sort(t_stack *list)
+t_stack	*ft_sort_three(t_stack *list)
 {
-	if (list->num > list->next->num && list->next->num > list->prev->num)
+	if (list->index > list->next->index
+		&& list->next->index > list->next->next->index)
 	{
 		list = ft_swap_a(list);
 		return (ft_reverse_rotate_a(list));
 	}
-	if (list->num < list->next->num && list->num < list->prev->num)
+	if (list->index < list->next->index
+		&& list->index < list->next->next->index)
 	{
 		list = ft_reverse_rotate_a(list);
 		return (ft_swap_a(list));
 	}
-	if (list->num > list->next->num && list->num > list->prev->num)
+	if (list->index > list->next->index
+		&& list->index > list->next->next->index)
 		return (ft_rotate_a(list));
-	if (list->num > list->next->num && list->num < list->prev->num)
+	if (list->index > list->next->index
+		&& list->next->index < list->next->next->index)
 		return (ft_swap_a(list));
-	if (list->num < list->next->num && list->num > list->prev->num)
+	if (list->index < list->next->index
+		&& list->index > list->next->next->index)
 		return (ft_reverse_rotate_a(list));
 	return (list);
 }

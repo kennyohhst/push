@@ -6,18 +6,18 @@
 /*   By: code <code@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 14:49:31 by kkalika           #+#    #+#             */
-/*   Updated: 2022/11/13 14:53:46 by code             ###   ########.fr       */
+/*   Updated: 2022/12/09 20:09:34 by code             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	ft_free_split(char *str)
-{
-	if (str)
-		free(str);
-	return (0);
-}
+// static int	ft_free_split(char *str)
+// {
+// 	if (str)
+// 		free(str);
+// 	return (0);
+// }
 
 static size_t	wordlen(char *stringy, char delm)
 {
@@ -76,7 +76,7 @@ static char	**ft_putwords(char *string, char delimiter, char **new_string)
 			new_string[x] = ft_substr(string, i, wl);
 		}
 		if (!new_string[x])
-			return (ft_free_split(new_string[x]), NULL);
+			return (ft_free_s(new_string), NULL);
 		x++;
 		i = i + wl;
 	}
@@ -96,21 +96,3 @@ char	**ft_split(char const *s, char c)
 	ft_putwords((char *) s, c, nstr);
 	return (nstr);
 }
-
-// int	main(void)
-// {
-// 	char	*str;
-// 	char	dl;
-// 	str = ".bla.boink.silent.cow.aword.hi.";
-// 	dl = '.';
-// 	char	**stringbla = ft_split(str, dl);
-// 	printf("%s\n", stringbla[0]);
-//     printf("%s\n", stringbla[1]);
-//     printf("%s\n", stringbla[2]);
-//     printf("%s\n", stringbla[3]);
-//     printf("%s\n", stringbla[4]);
-//     printf("%s\n", stringbla[5]);
-// 	printf("%zu\n", countwords(str, dl));
-// 	printf("%zu\n", wordlen(str, dl));
-// 	return (0);
-// }

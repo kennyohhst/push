@@ -5,36 +5,30 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: code <code@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/30 19:34:09 by code              #+#    #+#             */
-/*   Updated: 2022/11/11 16:01:59 by code             ###   ########.fr       */
+/*   Created: 2022/11/19 18:02:17 by code              #+#    #+#             */
+/*   Updated: 2022/12/08 20:02:57 by code             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack	*ft_push_b(t_stack **list_a)
+void	ft_push_b(t_stack **src, t_stack **dst)
 {
 	t_stack	*temp;
 
-	temp = malloc(sizeof(t_stack));
-	if (!temp)
-		exit(write(1, "Error", 5));
-	temp->num = (*list_a)->num;
-	(*list_a)->prev->next = (*list_a)->next;
-	(*list_a)->next->prev = (*list_a)->prev;
-	(*list_a) = (*list_a)->next;
-	(*list_a)->head = (*list_a);
-	while (!(*list_a)->tail)
+	if (!(*dst))
 	{
-		(*list_a) = (*list_a)->next;
-		(*list_a)->head = (*list_a)->prev->head;
+		(*dst) = (*src);
+		(*src) = (*src)->next;
+		(*dst)->next = NULL;
 	}
-	(*list_a) = (*list_a)->next;
-	temp->next = temp;
-	temp->prev = temp;
-	temp->head = temp;
-	temp->tail = 1;
+	else
+	{
+		temp = (*src)->next;
+		(*src)->next = (*dst);
+		(*dst) = (*src);
+		(*src) = temp;
+	}	
 	write(1, "pb", 2);
 	write(1, "\n", 1);
-	return (temp);
 }

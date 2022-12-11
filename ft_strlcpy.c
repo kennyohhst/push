@@ -6,7 +6,7 @@
 /*   By: code <code@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 19:07:01 by kkalika           #+#    #+#             */
-/*   Updated: 2022/11/12 21:03:54 by code             ###   ########.fr       */
+/*   Updated: 2022/12/09 20:09:47 by code             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,3 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 		dst[i] = '\0';
 	return (ft_strlen(src));
 }
-
-// int	main(void)
-// {
-// 	char	*src = "abcdefghijklmnopqrstuvwxyz";
-// 	char	dst[20];
-// 	printf("%ld\n", ft_strlcpy(dst, src, 5));
-// 	printf("%s", dst);
-// 	return (0);
-// }

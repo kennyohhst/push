@@ -3,41 +3,36 @@
 /*                                                        :::      ::::::::   */
 /*   ft_check_double.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kkalika <kkalika@student.42.fr>            +#+  +:+       +#+        */
+/*   By: code <code@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/24 13:50:49 by code              #+#    #+#             */
-/*   Updated: 2022/11/17 14:59:32 by kkalika          ###   ########.fr       */
+/*   Created: 2022/11/17 18:05:22 by code              #+#    #+#             */
+/*   Updated: 2022/12/09 17:13:45 by code             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_check_double(char **string)
+void	ft_check_double(t_stack *list)
 {
-	int	x;
-	int	y;
+	t_stack	*a;
+	t_stack	*b;
 
-	x = 0;
-	while (string[x] != NULL)
+	if (!list)
+		exit(write(1, "what input?", 11));
+	a = list;
+	while (a->next != NULL)
 	{
-		y = x + 1;
-		while (string[y] != NULL)
+		b = a->next;
+		if (a->num == b->num)
+			exit(write(1, "check_double error 1", 20));
+		while (b->next != NULL)
 		{
-			if (ft_strlen(string[x]) == ft_strlen(string[y]))
-				if (!(ft_strncmp(string[x], string[y], ft_strlen(string[x]))))
-					exit (write(1, "fuck", 4));
-			y++;	
+			if (a->num == b->num)
+				exit(write(1, "check_double error 2", 20));
+			b = b->next;
+			if (a->num == b->num)
+				exit(write(1, "check_double error 3", 20));
 		}
-		x++;
+		a = a->next;
 	}
-		// y++;
-		// if (string[y] == NULL)
-		// {
-		// 	x++;
-		// 	y = x + 1;
-		// 	if (string[y] == NULL)
-		// 		return (1);
-		// }
-	// }
-	return (1);
 }

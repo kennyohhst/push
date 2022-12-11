@@ -6,7 +6,7 @@
 /*   By: code <code@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 18:19:15 by code              #+#    #+#             */
-/*   Updated: 2022/11/15 19:22:14 by code             ###   ########.fr       */
+/*   Updated: 2022/12/03 16:31:46 by code             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,14 @@
 
 void	ft_free_list(t_stack *list)
 {
+	t_stack	*temp;
 
-	int		i;
-	
 	if (!list)
 		return ;
-	i = ft_length_list(list);		
-	while (i > 1)
+	while (list)
 	{
-		printf("this is num:	%d\n", list->prev->num);
-		free(list->prev);
-		if (i == 2)
-			break ;
+		temp = list;
 		list = list->next;
-		i--;
+		free(temp);
 	}
-	free(list);
 }
-
-// 0 6 2 4 5 9 7

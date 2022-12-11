@@ -3,57 +3,65 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kkalika <kkalika@student.42.fr>            +#+  +:+       +#+        */
+/*   By: code <code@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 15:37:45 by code              #+#    #+#             */
-/*   Updated: 2022/11/17 15:52:23 by kkalika          ###   ########.fr       */
+/*   Updated: 2022/12/09 20:10:15 by code             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+// static void	test_this_bitch(t_stack *a, t_stack *b, t_stack *t, t_stack *emp)
+// {
+// 	printf("\n\nLets test This bitch:\n\n");
+// 	t = a;
+// 	while (t && t->next != NULL)
+// 	{
+// 		printf("num>	%d****", t->num);
+// 		printf("%d		<index\n", t->index);
+// 		t = t->next;
+// 	}
+// 	if (t)
+// 	{
+// 		printf("num>	%d****", t->num);
+// 		printf("%d		<index\n", t->index);
+// 	}
+// 	if (b)
+// 	{
+// 		emp = b;
+// 		while (emp->next != NULL)
+// 		{
+// 			printf("num_>	%d****", emp->num);
+// 			printf("%d		<index_\n", emp->index);
+// 			emp = emp->next;
+// 		}
+// 		printf("num_>	%d****", emp->num);
+// 		printf("%d		<index_", emp->index);
+// 		ft_free_list(b);
+// 	}
+// 	if (a)
+// 		ft_free_list(a);
+// }
+
 int	main(int argc, char **argv)
 {
-	// int i = 0;
-	// int num;
-	t_stack	*stack_a;
-	t_stack *stack_b;
-	
-	stack_a = NULL;
+	t_stack	*a;
+	t_stack	*b;
+
+	b = NULL;
+	a = NULL;
 	if (argc < 2 || !argv)
 		return (0);
-	stack_a = ft_parsing(stack_a, argv);
-	ft_sort(&stack_a, &stack_b);
-
-	
-	// char **string = ft_split(argv[1], ' ');
-	// ft_strncmp(string[0], string[1]);
-	// while (string[i] != NULL)
-	// {
-	// 	num = ft_grab_num(string[i]);
-	// 	ft_add_nodes(num, &stack_a);
-	// 	printf("this is num in string:	%s\n", string[i]);	
-	// 	i++;
-	// }
-	
-	
-	
-	
-	// stack_a = ft_parsing(argc, argv, 0, 1);
-		
-
-	// LETS TEST THIS BITCH
-	while (stack_a->tail != 1)
-	{
-		printf("help: %d  ", stack_a->num);
-		stack_a = stack_a->next;
-	}
-	printf("me : %d\n", stack_a->num);
-	printf("tail : %d\n", stack_a->tail);
-	if (stack_a != NULL)
-		ft_free_list(stack_a->head);
-	if (stack_b != NULL)
-		ft_free_list(stack_b->head);
-	// system("leaks push_swap");
+	if (argc == 2)
+		a = ft_parse_q(a, argv);
+	else
+		a = ft_parse(a, argv);
+	ft_sort(&a, &b);
+	// test_this_bitch(a, b, NULL, NULL);
+	if (a)
+		ft_free_list(a);
+	if (b)
+		ft_free_list(b);
 	return (0);
 }

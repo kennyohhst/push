@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_numcheck.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kkalika <kkalika@student.42.fr>            +#+  +:+       +#+        */
+/*   By: code <code@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 15:29:11 by code              #+#    #+#             */
-/*   Updated: 2022/11/17 14:42:18 by kkalika          ###   ########.fr       */
+/*   Updated: 2022/11/18 17:49:39 by code             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,12 @@ void	ft_numcheck(char *str)
 	i = 0;
 	if ((str[i] == '-' || str[i] == '+') && str[i] != '\0')
 		i++;
+	if (!(str[i] >= '0' && str[i] <= '9'))
+		exit(write(1, "numcheck error 1", 16));
 	while (str[i] != '\0')
 	{
 		if (!(str[i] >= '0' && str[i] <= '9'))
-			exit(write(1, "Error", 5));
+			exit(write(1, "numcheck error 2", 16));
 		i++;
 	}
 }

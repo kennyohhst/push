@@ -6,7 +6,7 @@
 /*   By: code <code@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 14:05:48 by code              #+#    #+#             */
-/*   Updated: 2022/11/15 19:24:36 by code             ###   ########.fr       */
+/*   Updated: 2022/12/03 16:31:46 by code             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ int	ft_length_list(t_stack *list)
 	i = 0;
 	if (list)
 	{
-		while (!list->tail)
+		while (list)
 		{
 			list = list->next;
 			i++;
-		}	
+		}
 	}
-	return (i + 1);
+	return (i);
 }

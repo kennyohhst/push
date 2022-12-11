@@ -6,7 +6,7 @@
 /*   By: code <code@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 19:06:32 by kkalika           #+#    #+#             */
-/*   Updated: 2022/11/12 21:06:36 by code             ###   ########.fr       */
+/*   Updated: 2022/12/09 19:25:21 by code             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strdup(const char *s1)
 	i = ft_strlen(s1);
 	str = malloc(i + 1);
 	if (!str)
-		return (0);
+		return (NULL);
 	ft_memcpy(str, s1, i + 1);
 	return (str);
 }

@@ -6,7 +6,7 @@
 /*   By: code <code@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 19:07:05 by kkalika           #+#    #+#             */
-/*   Updated: 2022/11/12 21:04:14 by code             ###   ########.fr       */
+/*   Updated: 2022/12/09 20:09:52 by code             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,3 @@ size_t	ft_strlen(const char *s)
 		i++;
 	return (i);
 }
-
-// int	main(void)
-// {
-// 	char	plop[] = "high";
-
-// 	printf("%zu\n", strlen(plop));
-// 	printf("%lu\n", ft_strlen(plop));
-// 	return (0);
-// }

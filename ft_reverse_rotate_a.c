@@ -6,40 +6,27 @@
 /*   By: code <code@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 17:01:29 by code              #+#    #+#             */
-/*   Updated: 2022/11/11 16:01:59 by code             ###   ########.fr       */
+/*   Updated: 2022/12/03 16:31:46 by code             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack	*ft_reverse_rotate_a(t_stack	*list)
+t_stack	*ft_reverse_rotate_a(t_stack *list)
 {
-	// int	temp;
+	t_stack	*temp;
+	t_stack	*first;
 
-	// temp = list->num;
-	// list->num = list->next->num;
-	// list->next->num = temp;
-	// temp = list->num;
-	// list->num = list->prev->num;
-	// list->prev->num = temp;
-	// temp = list->num;
-	// list->num = list->next->num;
-	// list->next->num = temp;
-	// temp = list->num;
-	// list->num = list->next->num;
-	// list->next->num = temp;
-	while (!(list->tail))
-	{
-		list->head = list->head->prev;
-		list = list->next;
-	}
-	if (list->tail)
-	{
-		list->head = list->head->prev;
-		list->head->prev->tail = 1;
-		list->tail = 0;
-	}
+	temp = list;
+	first = list;
+	while (temp->next)
+		temp = temp->next;
+	while (first->next->next)
+		first = first->next;
+	temp->next = list;
+	first->next = NULL;
+	list = temp;
 	write(1, "rra", 3);
 	write(1, "\n", 1);
-	return (list->head);
+	return (list);
 }

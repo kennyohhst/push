@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_circular_doubly.c                               :+:      :+:    :+:   */
+/*   ft_parse.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: code <code@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/27 14:29:25 by code              #+#    #+#             */
-/*   Updated: 2022/11/11 16:01:59 by code             ###   ########.fr       */
+/*   Created: 2022/11/18 17:13:16 by code              #+#    #+#             */
+/*   Updated: 2022/12/03 16:31:46 by code             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack	*ft_circular_doubly(t_stack *list)
+t_stack	*ft_parse(t_stack *list, char **argv)
 {
-	list->head = list->head;
-	list->next->prev = list;
-	list->tail = 1;
-	list = list->next;
+	int	i;
+
+	argv++;
+	while (*argv != NULL)
+	{
+		i = ft_grab_num(*argv);
+		ft_add_nodes(i, &list, NULL);
+		argv++;
+	}
+	ft_check_double(list);
+	ft_indexing(list);
 	return (list);
 }

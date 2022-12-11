@@ -1,34 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_push_a.c                                        :+:      :+:    :+:   */
+/*   ft_indexing.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: code <code@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/19 18:02:17 by code              #+#    #+#             */
-/*   Updated: 2022/12/08 20:03:08 by code             ###   ########.fr       */
+/*   Created: 2022/12/01 18:40:11 by code              #+#    #+#             */
+/*   Updated: 2022/12/03 20:16:56 by code             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_push_a(t_stack **src, t_stack **dst)
+void	ft_indexing(t_stack *list)
 {
-	t_stack	*temp;
+	t_stack	*temp_a;
+	t_stack	*temp_b;
+	int		i;
 
-	if (!(*dst))
+	if (ft_length_list(list) <= 1)
+		exit(write(1, "just one number?", 16));
+	i = 0;
+	temp_a = list;
+	temp_b = temp_a->next;
+	while (temp_a)
 	{
-		(*dst) = (*src);
-		(*src) = (*src)->next;
-		(*dst)->next = NULL;
+		if (temp_a->num > temp_b->num)
+			i++;
+		temp_b = temp_b->next;
+		if (!temp_b)
+		{
+			temp_a->index = i;
+			temp_a = temp_a->next;
+			temp_b = list;
+			i = 0;
+		}
 	}
-	else
-	{
-		temp = (*src)->next;
-		(*src)->next = (*dst);
-		(*dst) = (*src);
-		(*src) = temp;
-	}
-	write(1, "pa", 2);
-	write(1, "\n", 1);
 }
