@@ -6,13 +6,13 @@
 /*   By: code <code@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 15:37:45 by code              #+#    #+#             */
-/*   Updated: 2022/12/09 20:10:15 by code             ###   ########.fr       */
+/*   Updated: 2022/12/27 15:24:36 by code             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// static void	test_this_bitch(t_stack *a, t_stack *b, t_stack *t, t_stack *emp)
+// static void	test(t_stack *a, t_stack *b, t_stack *t, t_stack *emp)
 // {
 // 	printf("\n\nLets test This bitch:\n\n");
 // 	t = a;
@@ -58,7 +58,6 @@ int	main(int argc, char **argv)
 	else
 		a = ft_parse(a, argv);
 	ft_sort(&a, &b);
-	// test_this_bitch(a, b, NULL, NULL);
 	if (a)
 		ft_free_list(a);
 	if (b)

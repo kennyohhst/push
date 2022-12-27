@@ -6,18 +6,11 @@
 /*   By: code <code@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 14:49:31 by kkalika           #+#    #+#             */
-/*   Updated: 2022/12/09 20:09:34 by code             ###   ########.fr       */
+/*   Updated: 2022/12/27 15:22:46 by code             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-// static int	ft_free_split(char *str)
-// {
-// 	if (str)
-// 		free(str);
-// 	return (0);
-// }
 
 static size_t	wordlen(char *stringy, char delm)
 {
